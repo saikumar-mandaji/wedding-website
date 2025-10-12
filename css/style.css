@@ -12,7 +12,7 @@
 *
 * ======================================================= */
 body {
-  font-family: "Work Sans", Arial, sans-serif;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
@@ -61,6 +61,10 @@ a:hover, a:active, a:focus {
 
 p {
   margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+  color: #666;
+  letter-spacing: 0.01em;
 }
 
 h1, h2, h3, h4, h5, h6, figure {
@@ -441,55 +445,128 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-counter .event-wrap,
 #fh5co-event .event-wrap {
-  border: 2px solid rgba(0, 0, 0, 0.5);
+  border: none;
   padding: 30px;
   width: 100%;
   float: left;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  overflow: hidden;
 }
 
 /* Add shadow and hover lift for event cards */
 #fh5co-counter .event-wrap,
 #fh5co-event .event-wrap {
-  -webkit-box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  -webkit-transition: transform 0.25s ease, box-shadow 0.25s ease;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  -webkit-box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
 }
 #fh5co-counter .event-wrap:hover,
 #fh5co-event .event-wrap:hover {
-  transform: translateY(-6px);
-  -webkit-box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  transform: translateY(-10px);
+  -webkit-box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 @media screen and (max-width: 768px) {
   #fh5co-counter .event-wrap,
   #fh5co-event .event-wrap {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+  }
+  
+  #fh5co-counter .event-wrap h3,
+  #fh5co-event .event-wrap h3 {
+    font-size: 24px;
+    padding-bottom: 15px;
+  }
+  
+  #fh5co-counter .event-wrap .event-col,
+  #fh5co-event .event-wrap .event-col {
+    margin-bottom: 20px;
+  }
+  
+  .map-embed iframe {
+    height: 180px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #fh5co-counter .event-wrap,
+  #fh5co-event .event-wrap {
+    padding: 15px;
+  }
+  
+  #fh5co-counter .event-wrap h3,
+  #fh5co-event .event-wrap h3 {
+    font-size: 20px;
+  }
+  
+  .map-embed iframe {
+    height: 160px;
   }
 }
 #fh5co-counter .event-wrap h3,
 #fh5co-event .event-wrap h3 {
-  font-size: 14px;
+  font-size: 28px;
   color: #000000;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   display: block;
   padding-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-family: Sofia Sans Condensed;
-  font-size: 25px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-top: 0;
+}
+
+/* Map embed styling */
+.map-embed {
+  margin-top: 20px;
+}
+
+.map-embed iframe {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.map-embed iframe:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.map-embed p {
+  margin-top: 15px;
+}
+
+.map-embed .btn {
+  margin-top: 10px;
+  border-radius: 30px;
+  padding: 8px 20px;
+  background: #F14E95;
+  border: 2px solid #F14E95;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.map-embed .btn:hover {
+  background: transparent;
+  color: #F14E95;
 }
 #fh5co-counter .event-wrap p, #fh5co-counter .event-wrap span,
 #fh5co-event .event-wrap p,
 #fh5co-event .event-wrap span {
   display: block;
   color: rgba(0, 0, 0, 0.8);
-  font-family: Sofia Sans Condensed;
-  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
 }
 #fh5co-counter .event-wrap i,
 #fh5co-event .event-wrap i {
@@ -501,51 +578,6 @@ h1, h2, h3, h4, h5, h6, figure {
   width: 50%;
   float: left;
   margin-bottom: 30px;
-}
-
-/* Modern styling for map embeds */
-.map-embed {
-  margin-top: 15px;
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-}
-
-.map-embed iframe {
-  border-radius: 8px;
-  width: 100%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.map-embed iframe:hover {
-  transform: scale(1.02);
-}
-
-.map-embed p {
-  margin-top: 10px;
-  text-align: center;
-}
-
-.map-embed a {
-  display: inline-block;
-  margin-top: 5px;
-  background-color: #F14E95;
-  color: white !important;
-  padding: 8px 16px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 14px !important;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(241, 78, 149, 0.3);
-}
-
-.map-embed a:hover {
-  background-color: #d63476;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(241, 78, 149, 0.4);
 }
 
 #fh5co-counter {
@@ -692,19 +724,29 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .timeline-title {
   margin-top: 0;
+  font-family: 'Dancing Script', cursive;
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
 }
 
 .date {
   display: block;
   margin-bottom: 20px;
-  font-size: 13px;
+  font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #666;
 }
 
 .timeline-body > p,
 .timeline-body > ul {
   margin-bottom: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 .timeline-body > p + p {
@@ -958,25 +1000,25 @@ form label {
 #fh5co-counter .display-tc h1,
 .fh5co-cover .display-tc h1 {
   margin-bottom: 0px;
-  font-size: 65px;
+  font-size: 50px;
   line-height: 1.5;
-  /* Use the Sacramento script font for the header names, with fallbacks */
-  font-family: 'Sacramento', 'Amsterdam', Arial, serif;
+  /* Updated to use Great Vibes for a more elegant script font */
+  font-family: 'Great Vibes', 'Dancing Script', 'Sacramento', cursive;
   font-weight: 400;
-  letter-spacing: 0;
+  letter-spacing: 1px;
 }
 @media screen and (max-width: 768px) {
   #fh5co-header .display-tc h1,
   #fh5co-counter .display-tc h1,
   .fh5co-cover .display-tc h1 {
-    font-size: 40px;
+    font-size: 36px;  /* Reduced from 40px */
   }
 }
 @media screen and (max-width: 480px) {
   #fh5co-header .display-tc h1,
   #fh5co-counter .display-tc h1,
   .fh5co-cover .display-tc h1 {
-    font-size: 30px;
+    font-size: 28px;  /* Reduced from 30px */
   }
 }
 #fh5co-header .display-tc h2,
@@ -1251,15 +1293,15 @@ form label {
 }
 .fh5co-heading h2 {
   font-size: 42px;
-  margin-bottom: 15px;
-  line-height: 1.4;
-  font-weight: bold;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-weight: 600;
   color: #646464;
-  font-family: "Amsterdam", Arial, serif;
+  font-family: "Dancing Script", "Amsterdam", serif;
 }
 @media screen and (max-width: 768px) {
   .fh5co-heading h2 {
-    font-size: 32px;
+    font-size: 32px;  /* Reduced from 40px */
   }
 }
 .fh5co-heading p {
