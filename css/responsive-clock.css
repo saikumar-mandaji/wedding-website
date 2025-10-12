@@ -186,6 +186,6 @@
 .flip-clock-divider .flip-clock-label {
   color: white !important;
   font-size: 14px !important;
-  font-weight: bold !important;
-  font-family: Sofia Sans Condensed !important; 
+  font-weight: 500 !important;
+  font-family: 'Poppins', sans-serif !important;
 }

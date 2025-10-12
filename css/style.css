@@ -52,6 +52,8 @@ a {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
 }
 a:hover, a:active, a:focus {
   color: #646464;
@@ -68,9 +70,9 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6, figure {
-  color: #000;
-  font-family: "Work Sans", Arial, sans-serif;
-  font-weight: 400;
+  color: #333;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
   margin: 0 0 20px 0;
 }
 
@@ -108,7 +110,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: 0;
   padding: 0;
   line-height: 40px;
-  font-family: "Sofia Sans Condensed";
+  font-family: 'Libre Baskerville', serif;
 }
 .fh5co-nav a {
   padding: 5px 10px;
@@ -130,8 +132,8 @@ h1, h2, h3, h4, h5, h6, figure {
   display: inline;
 }
 .fh5co-nav ul li a {
-  font-size: 20px;
-  font-family: Sofia Sans Condensed;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
   padding: 30px 10px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
@@ -1044,7 +1046,8 @@ form label {
   color: #646464;
   border: none !important;
   font-size: 16px;
-  font-family: Sofia Sans Condensed;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
   text-transform: uppercase;
 }
 #fh5co-header .display-tc .btn:hover,
@@ -1180,7 +1183,7 @@ form label {
   }
 }
 .couple-half h3 {
-  font-family: "Amsterdam", Arial, serif;
+  font-family: 'Playfair Display', serif;
   color: #646464;
   font-size: 30px;
 }
@@ -1297,7 +1300,7 @@ form label {
   line-height: 1.5;
   font-weight: 600;
   color: #646464;
-  font-family: "Dancing Script", "Amsterdam", serif;
+  font-family: 'Dancing Script', serif;
 }
 @media screen and (max-width: 768px) {
   .fh5co-heading h2 {
@@ -1542,8 +1545,8 @@ form label {
   width: 270px;
   background: black;
   font-size: 14px;
-  font-weight: bold;
-  font-family: Sofia Sans Condensed; 
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
   top: 0;
   right: 0;
   top: 0;
@@ -1765,9 +1768,9 @@ form label {
 .btn {
   margin-right: 4px;
   margin-bottom: 4px;
-  font-family: "Work Sans", Arial, sans-serif;
+  font-family: 'Poppins', Arial, sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
@@ -1776,6 +1779,7 @@ form label {
   -o-transition: 0.5s;
   transition: 0.5s;
   padding: 8px 20px;
+  letter-spacing: 0.5px;
 }
 .btn.btn-md {
   padding: 8px 20px !important;
