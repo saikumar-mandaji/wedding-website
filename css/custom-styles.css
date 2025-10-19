@@ -42,6 +42,157 @@
   left: 100%;
 }
 
+/* Global background image optimizations */
+[style*="background-image"] {
+  background-position: center center;
+  background-size: cover;
+}
+
+/* Additional mobile optimizations */
+@media screen and (max-width: 768px) {
+  .fh5co-bg {
+    background-position: center center !important;
+    background-size: cover !important;
+    min-height: 100vh !important;
+  }
+  
+  /* Additional background image optimization for mobile */
+  #fh5co-header.fh5co-cover {
+    position: relative;
+    z-index: 1;
+    background-image: none !important; /* Remove inline background image */
+  }
+  
+  /* Create a separate element for the background image */
+  #fh5co-header.fh5co-cover:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../images/bg.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -2;
+  }
+  
+  .timeline-badge {
+    background-position: center center !important;
+    background-size: cover !important;
+  }
+  
+  /* Adjust vertical spacing */
+  .fh5co-heading {
+    margin-bottom: 2em !important;
+  }
+  
+  /* Improve readability on mobile */
+  h1, h2, h3 {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Stylish Hearts */
+.heart-decoration {
+  position: relative;
+  display: inline-block;
+  margin: 0 15px;
+  vertical-align: middle;
+}
+
+.heart {
+  color: #f14e95;
+  font-size: 28px;
+  animation: pulse-heart 1.5s ease infinite;
+  display: inline-block;
+  position: relative;
+  transform-origin: center;
+}
+
+.heart.small {
+  font-size: 18px;
+  animation-delay: 0.3s;
+}
+
+.heart.medium {
+  font-size: 24px;
+  animation-delay: 0.6s;
+}
+
+.heart.large {
+  font-size: 32px;
+  animation-delay: 0.9s;
+}
+
+.heart-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.heart-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.heart-divider:before, 
+.heart-divider:after {
+  content: "";
+  height: 1px;
+  background: rgba(241, 78, 149, 0.3);
+  flex-grow: 1;
+  margin: 0 15px;
+}
+
+.floating-hearts {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.floating-heart {
+  position: absolute;
+  font-size: 18px;
+  color: rgba(241, 78, 149, 0.6);
+  animation: float-up 15s linear infinite;
+  opacity: 0;
+}
+
+@keyframes pulse-heart {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes float-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100%) rotate(0deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100vh) rotate(360deg);
+  }
+}
+
 /* Enhanced fprint image */
 .fprint {
   width: 200px;
@@ -197,6 +348,75 @@
   animation: scroll 2s infinite;
 }
 
+/* Comprehensive fix for background image on all devices */
+#fh5co-header.fh5co-cover {
+  background-position: center center;
+  background-size: cover;
+  background-attachment: scroll;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add a pseudo-element for better mobile background handling */
+#fh5co-header.fh5co-cover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: inherit;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+@media screen and (max-width: 768px) {
+  #fh5co-header.fh5co-cover {
+    height: 100vh !important; /* Force full viewport height */
+    background-position: center center;
+    background-size: cover;
+  }
+  
+  .fh5co-cover .display-t,
+  .fh5co-cover .display-tc {
+    height: 100vh !important; /* Match the container height to viewport */
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    z-index: 2; /* Ensure content stays above background */
+  }
+  
+  /* Ensure the background overlay has proper z-index */
+  .fh5co-cover .overlay {
+    z-index: -1 !important;
+  }
+  
+  /* Fix for the other sections with background images */
+  .fh5co-bg {
+    position: relative;
+    background-position: center center !important;
+    background-size: cover !important;
+  }
+  
+  .heart {
+    font-size: 24px !important; /* Smaller hearts on mobile */
+  }
+  
+  .heart.small {
+    font-size: 16px !important;
+  }
+  
+  .heart.medium {
+    font-size: 20px !important;
+  }
+  
+  .heart.large {
+    font-size: 26px !important;
+  }
+}
+
 @keyframes scroll {
   0% {
     opacity: 0;
@@ -225,5 +445,78 @@
     bottom: 30px;
     height: 40px;
     width: 25px;
+  }
+  
+  /* Wedding day message styling */
+  .wedding-day-message {
+    margin-top: 40px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: pulse 2s infinite;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .wedding-day-message:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid #f14e95;
+    border-radius: 12px;
+    animation: border-dance 3s infinite linear;
+    z-index: -1;
+  }
+
+  .wedding-day-message h2 {
+    color: #f14e95;
+    font-family: 'Dancing Script', cursive;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .wedding-day-message p {
+    color: #333;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.03);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes border-dance {
+    0% {
+      clip-path: inset(0 0 95% 0);
+    }
+    25% {
+      clip-path: inset(0 0 0 95%);
+    }
+    50% {
+      clip-path: inset(95% 0 0 0);
+    }
+    75% {
+      clip-path: inset(0 95% 0 0);
+    }
+    100% {
+      clip-path: inset(0 0 95% 0);
+    }
   }
 }
