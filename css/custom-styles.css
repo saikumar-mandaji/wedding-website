@@ -1,0 +1,229 @@
+/* Custom styles to enhance the wedding website */
+
+/* Enhanced button styling */
+.btn.btn-default {
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #333 !important;
+  border: 2px solid rgba(255, 255, 255, 0.9) !important;
+  border-radius: 30px !important;
+  padding: 8px 20px !important;
+  letter-spacing: 1px;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.btn.btn-default:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: all 0.6s ease;
+  z-index: 0;
+}
+
+.btn.btn-default:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.25) !important;
+  background: rgba(255, 255, 255, 1) !important;
+}
+
+.btn.btn-default:hover:before {
+  left: 100%;
+}
+
+/* Enhanced fprint image */
+.fprint {
+  width: 200px;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4));
+  animation: float 4s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.fprint:hover {
+  transform: scale(1.05);
+}
+
+/* Enhanced overlay for fh5co-bg sections */
+#fh5co-event .overlay {
+  background: linear-gradient(45deg, rgba(30, 30, 70, 0.7), rgba(70, 30, 70, 0.7));
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='white' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* Enhanced event cards */
+.event-wrap {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.event-wrap:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.event-wrap h3 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.event-wrap h3:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(to right, #f14e95, #f86773);
+}
+
+/* Enhanced timeline */
+.timeline-badge {
+  box-shadow: 0 0 0 4px #f14e95, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+}
+
+.timeline-badge:hover {
+  transform: scale(1.1);
+}
+
+.timeline-panel {
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.timeline-panel:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+/* Enhanced header with parallax effect */
+#fh5co-header {
+  background-position: center center;
+  animation: subtle-zoom 30s ease-in-out infinite alternate;
+  position: relative;
+}
+
+@keyframes subtle-zoom {
+  0% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 110%;
+  }
+}
+
+/* Enhanced navigation */
+.fh5co-nav ul li a {
+  position: relative;
+  overflow: hidden;
+}
+
+.fh5co-nav ul li a:after {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.fh5co-nav ul li a:hover:after {
+  width: 50%;
+}
+
+/* Enhanced date display */
+#fh5co-header .display-tc h2, 
+#fh5co-counter .display-tc h2, 
+.fh5co-cover .display-tc h2 {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  animation: pulse 3s infinite ease-in-out;
+}
+
+/* Map styling */
+.map-embed iframe {
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.map-embed iframe:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 50px;
+  width: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  z-index: 10;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  opacity: 1;
+}
+
+.scroll-arrow {
+  position: relative;
+  height: 10px;
+  width: 10px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+  border-right: 2px solid rgba(255, 255, 255, 0.8);
+  transform: rotate(45deg);
+  margin: 15px auto 0;
+  animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-5px, -5px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .btn.btn-default {
+    padding: 6px 15px !important;
+  }
+  
+  .event-wrap:hover {
+    transform: translateY(-5px);
+  }
+  
+  .scroll-indicator {
+    bottom: 30px;
+    height: 40px;
+    width: 25px;
+  }
+}
