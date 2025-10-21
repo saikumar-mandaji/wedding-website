@@ -1051,7 +1051,7 @@ form label {
   font-family: 'Dancing Script', cursive;
   font-weight: 400;
   letter-spacing: 1px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, -0.7);
   background: linear-gradient(45deg, #fff 10%, #ffccd5 50%, #fff 90%);
   background-size: 200% auto;
   -webkit-background-clip: text;

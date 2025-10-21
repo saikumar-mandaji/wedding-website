@@ -26,7 +26,7 @@ $(document).ready(function() {
     $(".clock").hide();
     
     // Display a special message when the countdown is over
-    $(".flipTimebox").html('<div class="wedding-day-message animate-box" data-animate-effect="fadeInUp"><div class="heart-container"><span class="heart small">❤</span><span class="heart medium">❤</span><span class="heart large">❤</span></div><h2>Today is the day!</h2><p>Join us in celebration of our special day</p><div class="heart-container"><span class="heart medium">❤</span></div></div>');
+    $(".flipTimebox").html('<div class="wedding-day-message animate-box" data-animate-effect="fadeInUp"><div class="heart-container"><span class="heart small">❤</span><span class="heart medium">❤</span><span class="heart large">❤</span></div><h2 style="font-family: \'Dancing Script\', cursive; font-weight: 700; font-size: 48px;">Today is the day!</h2><p class="event-details">Join us in celebration of our special day</p><div class="fancy-divider"><span class="heart medium">❤</span></div></div>');
     
   } else {
     // Run countdown timer (diff is in seconds)
@@ -53,7 +53,7 @@ $(document).ready(function() {
         $(".clock").hide();
         
         // Replace the timer with the wedding day message
-        $(".flipTimebox").html('<div class="wedding-day-message animate-box" data-animate-effect="fadeInUp"><div class="heart-container"><span class="heart small">❤</span><span class="heart medium">❤</span><span class="heart large">❤</span></div><h2>Today is the day!</h2><p>Join us in celebration of our special day</p><div class="heart-container"><span class="heart medium">❤</span></div></div>');
+        $(".flipTimebox").html('<div class="wedding-day-message animate-box" data-animate-effect="fadeInUp"><div class="heart-container"><span class="heart small">❤</span><span class="heart medium">❤</span><span class="heart large">❤</span></div><h2 style="font-family: \'Dancing Script\', cursive; font-weight: 700; font-size: 48px;">Today is the day!</h2><p class="event-details">Join us in celebration of our special day</p><div class="fancy-divider"><span class="heart medium">❤</span></div></div>');
         
         // No need to continue checking once we've reached zero
         return;
