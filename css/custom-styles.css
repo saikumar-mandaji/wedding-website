@@ -192,7 +192,7 @@ p {
   }
 }
 
-/* Floating Flower Petals */
+/* Floating Hearts (formerly Flower Petals) */
 .petals-container {
   position: fixed;
   top: 0;
@@ -206,55 +206,53 @@ p {
 
 .petal {
   position: absolute;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.7;
+  display: inline-block;
+  font-style: normal;
   pointer-events: none;
   z-index: 9;
   will-change: transform;
-}
-
-.petal.pink {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 60"><path fill="%23f14e95" d="M40,0c0,0,10,30,40,20S60,60,40,40C20,60,0,50,0,20S40,0,40,0z"/></svg>');
-}
-
-.petal.white {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 60"><path fill="%23ffffff" d="M40,0c0,0,10,30,40,20S60,60,40,40C20,60,0,50,0,20S40,0,40,0z"/></svg>');
-}
-
-.petal.gold {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 60"><path fill="%23d4af37" d="M40,0c0,0,10,30,40,20S60,60,40,40C20,60,0,50,0,20S40,0,40,0z"/></svg>');
+  transform: rotate(var(--rotation));
+  filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.15));
 }
 
 @keyframes petal-fall {
   0% {
-    transform: translateY(-10vh) rotate(0deg) translateX(0);
+    transform: translateY(-10vh) translateX(0) scale(0.8) rotate(var(--rotation));
     opacity: 0;
   }
   10% {
-    opacity: 0.8;
+    opacity: var(--opacity, 0.7);
+  }
+  50% {
+    transform: translateY(40vh) translateX(calc(var(--drift-factor) * 150px)) scale(1) rotate(calc(var(--rotation) + 45deg));
   }
   90% {
-    opacity: 0.7;
+    opacity: var(--opacity, 0.7);
   }
   100% {
-    transform: translateY(100vh) rotate(360deg) translateX(calc(20vw * var(--drift-factor)));
+    transform: translateY(105vh) translateX(calc(var(--drift-factor) * 300px)) scale(0.8) rotate(calc(var(--rotation) + 90deg));
     opacity: 0;
   }
 }
 
-/* Petal burst animation */
+/* Heart burst animation */
 @keyframes petal-burst {
   0% {
-    transform: scale(0) rotate(0deg);
+    transform: scale(0.1) rotate(0deg);
     opacity: 0;
   }
-  20% {
+  10% {
+    transform: scale(1.2) rotate(20deg);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1) translate(calc(var(--distance) * 0.25 * 0.866), calc(var(--distance) * 0.25 * 0.5)) rotate(40deg);
+  }
+  75% {
     opacity: 0.8;
   }
   100% {
-    transform: scale(1) rotate(360deg) translateY(100px);
+    transform: scale(0.5) translate(calc(var(--distance) * 0.866), calc(var(--distance) * 0.5)) rotate(90deg);
     opacity: 0;
   }
 }
