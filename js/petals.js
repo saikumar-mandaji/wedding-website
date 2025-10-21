@@ -8,13 +8,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Colors for the petals
     const colors = ['pink', 'white', 'gold'];
     
-    // Create initial petals
-    for (let i = 0; i < 20; i++) {
+    // Set a maximum number of petals allowed on screen at once
+    const MAX_PETALS = 20;
+    
+    // Create initial petals - reduced from 20 to 8
+    for (let i = 0; i < 8; i++) {
         createPetal();
     }
     
-    // Create a petal every second
-    setInterval(createPetal, 1000);
+    // Create a petal every 3 seconds instead of every second
+    setInterval(createPetal, 3000);
     
     // Create petals when scrolling to romantic sections
     const romanticSections = ['#fh5co-header', '#fh5co-event', '#fh5co-services'];
@@ -26,13 +29,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 const rect = section.getBoundingClientRect();
                 // If section is in view
                 if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    createPetalBurst(5); // Create 5 petals in a burst
+                    createPetalBurst(2); // Reduced from 5 to 2 petals in a burst
                 }
             }
         });
     });
     
     function createPetal() {
+        // Check if we've reached the maximum number of petals
+        if (document.querySelectorAll('.petal').length >= MAX_PETALS) {
+            return; // Don't create any more petals
+        }
+        
         const petal = document.createElement('div');
         const size = Math.random() * 20 + 10; // 10-30px
         const colorClass = colors[Math.floor(Math.random() * colors.length)];
@@ -45,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         petal.style.setProperty('--drift-factor', (Math.random() * 2 - 1).toFixed(2)); // Random drift factor between -1 and 1
         
         // Set animation
-        const duration = Math.random() * 10 + 10; // 10-20s
+        const duration = Math.random() * 10 + 15; // 10-25s (increased to make them stay longer but fewer)
         petal.style.animation = `petal-fall ${duration}s linear forwards`;
         
         petalsContainer.appendChild(petal);
@@ -57,11 +65,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function createPetalBurst(count) {
+        // Check if we've reached the maximum number of petals
+        const currentPetals = document.querySelectorAll('.petal').length;
+        if (currentPetals >= MAX_PETALS) {
+            return; // Don't create any more petals
+        }
+        
+        // Adjust count if adding all would exceed the max
+        const safeCount = Math.min(count, MAX_PETALS - currentPetals);
+        
         // Get a random position in the viewport
         const x = Math.random() * window.innerWidth;
         const y = Math.random() * (window.innerHeight * 0.7) + (window.innerHeight * 0.15);
         
-        for (let i = 0; i < count; i++) {
+        for (let i = 0; i < safeCount; i++) {
             const petal = document.createElement('div');
             const size = Math.random() * 15 + 8; // 8-23px
             const colorClass = colors[Math.floor(Math.random() * colors.length)];

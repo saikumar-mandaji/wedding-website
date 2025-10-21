@@ -8,13 +8,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Colors for the hearts
     const colors = ['#FF6B6B', '#FF9999', '#FFB3B3', '#FFC2C2', '#D46A6A', '#D10000'];
     
-    // Create initial hearts
-    for (let i = 0; i < 12; i++) {
+    // Set a maximum number of hearts allowed on screen at once
+    const MAX_HEARTS = 12;
+    
+    // Create initial hearts (reduced from 12 to 5)
+    for (let i = 0; i < 5; i++) {
         createHeart();
     }
     
-    // Create a heart every 2 seconds
-    setInterval(createHeart, 2000);
+    // Create a heart every 4 seconds (reduced frequency from 2s to 4s)
+    setInterval(createHeart, 4000);
     
     // Create hearts when clicking on romantic elements
     document.body.addEventListener('click', function(e) {
@@ -22,11 +25,16 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target.closest('.heart, .romantic-section, #fh5co-couple') || 
             e.target.classList.contains('heart') ||
             e.target.closest('#fh5co-header')) {
-            createHeartBurst(6, e.clientX, e.clientY);
+            createHeartBurst(3, e.clientX, e.clientY); // Reduced from 6 to 3 hearts per burst
         }
     });
     
     function createHeart() {
+        // Check if we've reached the maximum number of hearts
+        if (document.querySelectorAll('.floating-heart').length >= MAX_HEARTS) {
+            return; // Don't create any more hearts
+        }
+        
         const heart = document.createElement('div');
         const size = Math.random() * 20 + 10; // 10-30px
         const colorIndex = Math.floor(Math.random() * colors.length);
@@ -56,11 +64,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function createHeartBurst(count, x, y) {
+        // Check if we've reached the maximum number of hearts
+        const currentHearts = document.querySelectorAll('.floating-heart').length;
+        if (currentHearts >= MAX_HEARTS) {
+            return; // Don't create any more hearts
+        }
+        
+        // Adjust count if adding all would exceed the max
+        const safeCount = Math.min(count, MAX_HEARTS - currentHearts);
+        
         // Position is where the click happened, or random if not provided
         const posX = x || Math.random() * window.innerWidth;
         const posY = y || Math.random() * (window.innerHeight * 0.7) + (window.innerHeight * 0.15);
         
-        for (let i = 0; i < count; i++) {
+        for (let i = 0; i < safeCount; i++) {
             const heart = document.createElement('div');
             const size = Math.random() * 15 + 15; // 15-30px
             const colorIndex = Math.floor(Math.random() * colors.length);
