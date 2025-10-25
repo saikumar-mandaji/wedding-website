@@ -7,7 +7,7 @@ $(document).ready(function() {
   // Target future date/24 hour time/Timezone (updated to event date)
   // NOTE: change this value to update the countdown target.
   // Use 24-hour format to avoid AM/PM confusion
-  let targetDate = moment.tz("2025-10-30 12:00", "YYYY-MM-DD HH:mm", "Asia/Kolkata");
+  let targetDate = moment.tz("2025-10-30 10:59", "YYYY-MM-DD HH:mm", "Asia/Kolkata");
 
   // Calculate the difference in seconds between the future and current date
   // use valueOf() for clarity (milliseconds since epoch) then convert to seconds

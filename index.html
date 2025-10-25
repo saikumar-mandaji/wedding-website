@@ -99,6 +99,9 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
 
+    <!-- Leaflet Maps CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+
     <!-- Theme style  -->
     <link rel="stylesheet" href="css/style.css" />
     
@@ -249,7 +252,7 @@
                       <h3 class="timeline-title">Wedding</h3>
                       <p>
                         <small class="text-muted"
-                          >30 October 2025 — 12:00 PM</small
+                          >30 October 2025 — 10:59 AM</small
                         >
                       </p>
                     </div>
@@ -271,7 +274,7 @@
                       <h3 class="timeline-title">Reception</h3>
                       <p>
                         <small class="text-muted"
-                          >31 October 2025 — 07:00 PM</small
+                          >31 October 2025 — 3:00 PM</small
                         >
                       </p>
                     </div>
@@ -315,24 +318,15 @@
                       </div>
                       <div class="event-col">
                         <i class="icon-clock"></i>
-                        <span>12:00 PM</span>
+                        <span>10:59 AM</span>
                       </div>
                       <p>
                         At <b>Thimmapur</b>
                       </p>
                       <div class="map-embed">
-                        <iframe
-                          title="Thimmapur location"
-                          src="https://www.google.com/maps?q=Thimmapur&output=embed"
-                          width="100%"
-                          height="200"
-                          style="border: 0; border-radius: 8px;"
-                          allowfullscreen=""
-                          loading="lazy"
-                          referrerpolicy="no-referrer-when-downgrade"
-                        ></iframe>
+                        <div id="thimmapur-map" style="height: 300px; border-radius: 8px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></div>
                         <p>
-                          <a href="https://www.google.com/maps?q=Thimmapur" target="_blank" rel="noopener noreferrer" class="btn btn-default btn-sm">Open in Google Maps</a>
+                          <a href="https://maps.app.goo.gl/GWiAdvBLo4aonTgP9" target="_blank" rel="noopener noreferrer" class="btn btn-default btn-sm">📍 Open in Google Maps</a>
                         </p>
                       </div>
                     </div>
@@ -348,29 +342,20 @@
                       </div>
                       <div class="event-col">
                         <i class="icon-clock"></i>
-                        <span>7:00 PM</span>
+                        <span>3:00 PM</span>
                       </div>
                       <p>
                         At <b>Maskapur</b>
                       </p>
                       <div class="map-embed">
-                        <iframe
-                          title="Maskapur location"
-                          src="https://www.google.com/maps?q=Maskapur&output=embed"
-                          width="100%"
-                          height="200"
-                          style="border: 0; border-radius: 8px;"
-                          loading="lazy"
-                          referrerpolicy="no-referrer-when-downgrade"
-                          aria-label="Map showing Maskapur location"
-                        ></iframe>
+                        <div id="maskapur-map" style="height: 300px; border-radius: 8px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></div>
                         <p>
                           <a
-                            href="https://maps.app.goo.gl/KMS8Us9zEh2wfdXF9"
+                            href="https://maps.app.goo.gl/MEVHs17wSfwJ8u2s9"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="btn btn-default btn-sm"
-                            >Open in Google Maps</a
+                            >📍 Open in Google Maps</a
                           >
                         </p>
                       </div>
@@ -466,5 +451,9 @@
     <script src="js/hearts.js"></script>
     <!-- Gallery Loader -->
     <script src="js/gallery-loader.js"></script>
+    <!-- Leaflet Maps JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <!-- Interactive Maps Loader -->
+    <script src="js/maps-loader.js"></script>
   </body>
 </html>
