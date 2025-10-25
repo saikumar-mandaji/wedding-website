@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    // Thimmapur coordinates (approximate)
-    const thimmapurCoords = [17.3569, 78.4689]; // Latitude, Longitude
-    const maskapurCoords = [17.3645, 78.4723]; // Maskapur coordinates (approximate)
+    // Thimmapur coordinates
+    const thimmapurCoords = [19.04841110310464, 79.08136686975504]; // Latitude, Longitude
+    const maskapurCoords = [19.03004184973851, 78.64549052512542]; // Maskapur coordinates
 
     // Initialize Thimmapur map
     const thimmapurMap = L.map('thimmapur-map').setView(thimmapurCoords, 15);
